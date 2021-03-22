@@ -19,6 +19,25 @@ dla $\{1, 2, ... m\}$:
 
 TO DO: jak to zapisać matematycznie?
 
+-- PROPOZYCJA
+
+Partycja zbioru S
+$P = \{P_1, P_2, ..., P_m\} \sub 2^S$, gdzie:
+* $\forall_{i, j} i \ne j \implies P_i \cap P_j = \empty$
+* $\displaystyle\bigcup_{i=1}^m P_i = S$
+* $\displaystyle\forall_{P_i \in P} mass(P_i) = \sum_{s \in P_i}mass(s) \le l_T$
+* $cost(P_i) = 
+\begin{cases}
+p_C & mass(P_i) \le l_C \\
+p_T & mass(P_i) \gt l_C
+\end{cases}
+$
+* $cost(P) = \displaystyle\sum_{P_i \in P} cost(P_i)$
+* odległość: https://www.sciencedirect.com/science/article/pii/S0166218X10003069
+* sąsiedztwo: pojedyncza zamiana elementu pomiędzy klasami (w tym stworzenie nowej klasy dla tego elementu)
+
+-- END PROPOZYCJA
+
 ### Funkcja celu
 
 Minimalizacja łącznego kosztu wszystkich przejazdów ciężarówek i samochodów osobowych.
