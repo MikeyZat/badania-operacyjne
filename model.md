@@ -11,53 +11,37 @@ $p_C\in\reals$ - cena przejazdu samochodu osobowego
 
 ### Reprezentacja rozwiązania
 
-$m \in \mathbb{Z}$ - liczba wszystkich przejazdów
-dla $\{1, 2, ... m\}$:
-1, 4, 6, 2 - ciężarówka
-3, 5 - osobówka
-7, 8 - osobówka
-
-TO DO: jak to zapisać matematycznie?
-
--- PROPOZYCJA
-
-Partycja zbioru S
+$P$ - partycja zbioru $S$ (podział przedmiotów na przejazdy odpowiednim samochodem)
 $P = \{P_1, P_2, ..., P_m\} \sub 2^S$, gdzie:
-* $\forall_{i, j} i \ne j \implies P_i \cap P_j = \empty$
-* $\displaystyle\bigcup_{i=1}^m P_i = S$
-* $\displaystyle\forall_{P_i \in P} mass(P_i) = \sum_{s \in P_i}mass(s) \le l_T$
-* $cost(P_i) = 
+
+- $\forall_{i, j \in \{1, 2, ..., m\}} i \ne j \implies P_i \cap P_j = \empty$
+- $\displaystyle\bigcup_{i=1}^m P_i = S$
+- $\displaystyle\forall_{P_i \in P} mass(P_i) = \sum_{s \in P_i}mass(s) \le l_T$
+
+### Funkcja celu
+
+Minimalizacja łącznego kosztu wszystkich przejazdów, tj.
+
+$f(P) = \displaystyle\sum_{P_i \in P} cost(P_i) \to min$
+
+, gdzie $cost(P_i)$ jest kosztem przejazdu $i$, tj.
+
+$cost(P_i) =
 \begin{cases}
 0 & P_i = \empty \\
 p_C & mass(P_i) \le l_C \\
 p_T & mass(P_i) \gt l_C
-\end{cases}
-$
-* $cost(P) = \displaystyle\sum_{P_i \in P} cost(P_i)$
-* odległość: https://www.sciencedirect.com/science/article/pii/S0166218X10003069
-* sąsiedztwo: pojedyncza zamiana elementu pomiędzy klasami (w tym stworzenie nowej klasy dla tego elementu)
-
--- END PROPOZYCJA
-
-### Funkcja celu
-
-Minimalizacja łącznego kosztu wszystkich przejazdów ciężarówek i samochodów osobowych.
-
-$f(\pi) = \sum_{i=1}^m \pi_i \cdot l_C + (1 - \pi_i) \cdot l_T \to min$
-
-$\pi_i =
-\begin{cases}
-0 &\text{ jeśli przejazd i jest samochodem ciężarowym} \\
-1 &\text{ jeśli przejazd i jest samochodem osobowym}
 \end{cases}$
-
-TO DO: dostosować do matematycznej definicji w **reprezentacja rozwiązania**
 
 #### Odległość
 
-TODO
+https://www.sciencedirect.com/science/article/pii/S0166218X10003069
+
+#### Sąsiedztwo
+
+Pojedyncza zamiana elementu pomiędzy klasami (w tym stworzenie nowej klasy dla tego elementu).
 
 ### Warunki ograniczające
 
-Skończone ładowności $l_T$ oraz $l_C$.
+Skończone ładowności $l_T$ oraz $l_C$. \
 Wszystkie przedmiotu z $S$ muszą zostać załadowane.
