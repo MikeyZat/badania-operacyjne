@@ -28,6 +28,7 @@ $P = \{P_1, P_2, ..., P_m\} \sub 2^S$, gdzie:
 * $\displaystyle\forall_{P_i \in P} mass(P_i) = \sum_{s \in P_i}mass(s) \le l_T$
 * $cost(P_i) = 
 \begin{cases}
+0 & P_i = \empty \\
 p_C & mass(P_i) \le l_C \\
 p_T & mass(P_i) \gt l_C
 \end{cases}
