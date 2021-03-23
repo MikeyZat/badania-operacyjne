@@ -35,6 +35,7 @@ p_T & mass(P_i) \gt l_C
 
 #### Odległość
 
+Specjalny przypadek odległości edycyjnej definiowany dla partycji zbioru:  
 https://www.sciencedirect.com/science/article/pii/S0166218X10003069
 
 #### Sąsiedztwo
@@ -43,5 +44,8 @@ Pojedyncza zamiana elementu pomiędzy klasami (w tym stworzenie nowej klasy dla 
 
 ### Warunki ograniczające
 
-Skończone ładowności $l_T$ oraz $l_C$. \
-Wszystkie przedmiotu z $S$ muszą zostać załadowane.
+* Skończone ładowności $l_T$ oraz $l_C$.  
+* Wszystkie przedmiotu z $S$ muszą zostać załadowane.  
+* *Implicite* założenia o ładownościach i cenach:
+    * $l_C \lt l_T$
+    * $p_C \lt p_T$
