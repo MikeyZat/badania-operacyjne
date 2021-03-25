@@ -1,4 +1,11 @@
-# Model matematyczny
+# Definicja problemu
+
+## Ogólny opis problemu
+
+Naszym celem jest rozwiązanie problemu przeprowadzki. Zakładamy, że mamy $n$ przedmiotów do przewiezienia z punktu A do punktu B. Każdy przedmiot ma określoną masę. Przewozić przedmioty możemy za pomocą naszego samochodu osobowego (ma on oczywiście skończoną ładowność $l_C$), lub też wynajętego samochodu ciężarowego (ładowność $l_T$). Każdy przejazd ma swoją cenę, w przypadku samochodu osobowego kosztuje nas paliwo ($p_C$), w przypadku ciężarowego koszt wynajmu + paliwo (łącznie $p_T$).
+Naszym celem jest znalezienie takiego rozłożenia **wszystkich** przedmiotów pomiędzy przejazdy samochodem osobowym lub ciężarowym, aby łączny koszt naszej przeprowadzki był jak najmniejszy.
+
+## Model matematyczny
 
 ### Struktury danych
 
@@ -35,7 +42,7 @@ p_T & mass(P_i) \gt l_C
 
 #### Odległość
 
-Specjalny przypadek odległości edycyjnej definiowany dla partycji zbioru:  
+Specjalny przypadek odległości edycyjnej definiowany dla partycji zbioru:
 https://www.sciencedirect.com/science/article/pii/S0166218X10003069
 
 #### Sąsiedztwo
