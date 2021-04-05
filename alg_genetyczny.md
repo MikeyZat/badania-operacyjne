@@ -16,6 +16,14 @@ mass(P_i) \over l_T & trans_i = truck \land mass(P_i) < l_T \\
 \end{cases}
 $$
 
+ALTERNATYWNIE
+$$
+fitness(P_i, trans_i) = \begin{cases}
+mass(P_i) \over p_C & trans_i = car \land mass(P_i) < l_C \\
+mass(P_i) \over p_T & trans_i = truck \land mass(P_i) < l_T \\
+0 & \text{w p.w.}
+\end{cases}
+$$
 
 ## N. Referencje
 1. http://www.cs.uno.edu/people/faculty/bill/GAs-for-PartitioningSets-IJAIT-2001.pdf
