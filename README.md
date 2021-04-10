@@ -1,4 +1,4 @@
-﻿# badania-operacyjne
+﻿# Badania operacyjne
 
 Ten projekt ma na celu optymalizację rozwiązania problemu przeprowadzki. Wykorzystamy różne algorytmy i zbadamy ich skuteczność.
 
