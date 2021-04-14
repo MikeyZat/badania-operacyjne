@@ -37,6 +37,7 @@ class Item:
         return str(self.weight)
 
 
+
 def divide_into_trips(items, capacity):
     divided_weights = []
 
@@ -54,6 +55,8 @@ def divide_into_trips(items, capacity):
         divided_weights.append(np.array(curr_trip_items))
     return np.array(divided_weights, dtype=object)
 
+def cost(car_trips, truck_trips, car_cost, truck_cost):
+    return len(car_trips)*car_cost+len(truck_trips)*truck_cost
 
 # I'm assuming every weight < truck capacity
 def rand_solution(items, car_capacity, truck_capacity, car_item_prob=-1):
@@ -75,6 +78,9 @@ def main():
     car_capacity = n // 2
     truck_capacity = 2 * n
     weights = np.random.randint(1, n // 1.5, n)
+    
+    car_cost = 10
+    truck_cost = 50
 
     items = np.array([Item(w) for w in weights])
     print(items)
@@ -84,7 +90,10 @@ def main():
     print(car_trips)
     print("=============")
     print(truck_trips)
-
+    
+    operation_cost = cost(car_trips, truck_trips, car_cost, truck_cost)
+    
+    print(operation_cost)
 
 if __name__ == '__main__':
     main()
