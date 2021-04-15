@@ -1,10 +1,12 @@
+import dataclasses
 import random
 
 
 # not sure what this class will look like in the future
+@dataclasses.dataclass(order=True, frozen=True)
 class Item:
-    def __init__(self, weight):
-        self.weight = weight
+    weight: float
+    name: str = dataclasses.field(default='')
 
     def __sub__(self, other):
         return self.weight - other
@@ -12,29 +14,8 @@ class Item:
     def __add__(self, other):
         return self.weight + other
 
-    def __gt__(self, other):
-        return self.weight > other
-
-    def __ge__(self, other):
-        return self.weight >= other
-
-    def __lt__(self, other):
-        return self.weight < other
-
-    def __le__(self, other):
-        return self.weight <= other
-
-    def __iadd__(self, other):
-        self.weight += other
-
-    def __isub__(self, other):
-        self.weight -= other
-
     def __str__(self):
         return str(self.weight)
-
-    def __repr__(self):
-        return f'Item({self.weight})'
 
 
 def divide_into_trips(items, capacity):
