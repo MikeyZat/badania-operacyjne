@@ -86,7 +86,22 @@ class Chromosome:
                         common_genes.add(gene)
                         break
                 i += 1
-        # TODO Krok 2: wybieranie najlepszych genów z obu rodziców
+        # Krok 2: wybieranie najlepszych genów z obu rodziców
+        step_2_genes: List[Gene] = []
+        genes_from_self = (len(self) - len(common_genes)) // 2
+        genes_from_other = (len(other) - len(common_genes)) // 2
+        for gene in self_genes:
+            if genes_from_self == 0:
+                break
+            if gene not in common_genes:
+                step_2_genes.append(gene)
+                genes_from_self -= 1
+        for gene in other_genes:
+            if genes_from_other == 0:
+                break
+            if gene not in common_genes:
+                step_2_genes.append(gene)
+                genes_from_other -= 1
         # TODO Krok 3: usuwanie przedmiotów występujących 2 razy
         # TODO Krok 4: dodawanie przedmiotów nie występujących w ogóle
 
