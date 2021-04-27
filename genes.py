@@ -1,11 +1,40 @@
 from functools import cached_property
 from typing import Iterable, Set, List
 from pprint import pprint
+from random import random
+import util
 
 from main import Item
 
 
+def mass_fitness(s: Iterable[Item], truck_load, car_load):
+    weight = sum(item.weight for item in s)
+    return weight / (car_load if weight < car_load else truck_load)
+
+
+def cost_fitness(s: Iterable[Item], car_load,
+                 truck_cost, car_cost):
+    weight = sum(item.weight for item in s)
+    return weight / (car_cost if weight < car_load else truck_cost)
+
+
 class Gene:
+    """Klasa genu, reprezentująca jeden transport
+
+    # Interfejs
+    ## Atrybuty
+    * subset -> niemutowalny zbiór przedmiotów
+    * is_by_truck -> prawda jeśli transport musi odbyć się ciężarówką, fałsz w przeciwnym wypadku
+    * truck_load, car_load, truck_cost, car_cost -> dane wejściowe problemu
+    * weight -> sumaryczna masa przedmiotów
+    * mass_fitness -> sprawność massFitness z dokumentacji
+    * cost_fitness -> sprawność costFitness z dokumentacji
+    ## Metody
+    * __hash__ -> żeby geny można było wrzucić do zbioru
+    * __str__, __eq__ -> oczywiste
+    * __len__, __iter__ -> żeby gen mógł być traktowany jak Iterable
+    """
+
     def __init__(self, subset: Iterable[Item], truck_load,
                  car_load, truck_cost, car_cost):
         # assert truck_load > car_load
@@ -20,7 +49,7 @@ class Gene:
 
     @cached_property
     def weight(self) -> float:
-        return sum(item.weight for item in self.subset)
+        return sum(item.weight for item in self)
 
     @cached_property
     def mass_fitness(self) -> float:
@@ -51,6 +80,9 @@ class Gene:
             return self.subset == other.subset
         else:
             return set(self.subset) == set(other)
+
+    def __iter__(self):
+        return iter(self.subset)
 
 
 class Chromosome:
@@ -87,22 +119,47 @@ class Chromosome:
                         break
                 i += 1
         # Krok 2: wybieranie najlepszych genów z obu rodziców
-        step_2_genes: List[Gene] = []
+        step_2_genes_self: List[Gene] = []
+        step_2_genes_other: List[Gene] = []
         genes_from_self = (len(self) - len(common_genes)) // 2
         genes_from_other = (len(other) - len(common_genes)) // 2
         for gene in self_genes:
             if genes_from_self == 0:
                 break
             if gene not in common_genes:
-                step_2_genes.append(gene)
+                step_2_genes_self.append(gene)
                 genes_from_self -= 1
         for gene in other_genes:
             if genes_from_other == 0:
                 break
             if gene not in common_genes:
-                step_2_genes.append(gene)
+                step_2_genes_other.append(gene)
                 genes_from_other -= 1
-        # TODO Krok 3: usuwanie przedmiotów występujących 2 razy
+
+        # przygotowanie do kroków 3-4
+        all_items: Set[Item] = set(util.flatten(self_genes))
+        in_no_genes: Set[Item] = (all_items - set(util.flatten(step_2_genes_self))
+                                  - set(util.flatten(step_2_genes_other)))
+        in_2_genes: Set[Item] = (set(util.flatten(step_2_genes_self))
+                                 & set(util.flatten(step_2_genes_other)))
+        # Krok 3: usuwanie przedmiotów występujących 2 razy
+        chosen_seq = chosen_gene = None
+        for item in in_2_genes:
+            self_gene = [gene for gene in step_2_genes_self if item in gene.subset][0]
+            other_gene = [gene for gene in step_2_genes_other if item in gene.subset][0]
+            if (self_gene.cost_fitness < other_gene.cost_fitness
+                or (self_gene.cost_fitness == other_gene.cost_fitness
+                    and random() < 0.5)):
+                chosen_gene = self_gene
+                chosen_seq = step_2_genes_self
+            else:
+                chosen_gene = other_gene
+                chosen_seq = step_2_genes_other
+            chosen_seq.remove(chosen_gene)
+            chosen_gene = Gene(set(chosen_gene)-{item}, chosen_gene.truck_load,
+                               chosen_gene.car_load, chosen_gene.truck_cost,
+                               chosen_gene.car_cost)
+            chosen_seq.append(chosen_gene)
         # TODO Krok 4: dodawanie przedmiotów nie występujących w ogóle
 
     @property
