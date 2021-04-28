@@ -1,0 +1,68 @@
+{
+  "car_cost": 15,
+  "truck_cost": 50,
+  "car_load": 10,
+  "truck_load": 40,
+  "items": [
+    {
+      "name": "stick of incense",
+      "weight": 5.06
+    },
+    {
+      "name": "shark",
+      "weight": 7.2
+    },
+    {
+      "name": "shoes",
+      "weight": 11.43
+    },
+    {
+      "name": "bow tie",
+      "weight": 7.97
+    },
+    {
+      "name": "socks",
+      "weight": 8.28
+    },
+    {
+      "name": "mirror",
+      "weight": 4.29
+    },
+    {
+      "name": "hand bag",
+      "weight": 6.51
+    },
+    {
+      "name": "pair of handcuffs",
+      "weight": 7.71
+    },
+    {
+      "name": "fork",
+      "weight": 8.63
+    },
+    {
+      "name": "chair",
+      "weight": 8.24
+    },
+    {
+      "name": "can of whipped cream",
+      "weight": 12.11
+    },
+    {
+      "name": "lemon",
+      "weight": 5.39
+    },
+    {
+      "name": "craft book",
+      "weight": 7.15
+    },
+    {
+      "name": "egg beater",
+      "weight": 16.37
+    },
+    {
+      "name": "beaded bracelet",
+      "weight": 13.66
+    }
+  ]
+}
