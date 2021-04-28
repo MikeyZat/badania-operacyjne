@@ -1,8 +1,10 @@
 from functools import cached_property
 from typing import Iterable, Set, List
+from sortedcontainers import SortedList
 from pprint import pprint
 from random import random
 import util
+
 
 from main import Item
 
@@ -53,12 +55,16 @@ class Gene:
 
     @cached_property
     def mass_fitness(self) -> float:
+        if self.weight > self.truck_load:
+            return 0
         return self.weight / (self.truck_load
                               if self.is_by_truck
                               else self.car_load)
 
     @cached_property
     def cost_fitness(self) -> float:
+        if self.weight > self.truck_load:
+            return 0
         return self.weight / (self.truck_cost
                               if self.is_by_truck
                               else self.car_cost)
@@ -88,10 +94,8 @@ class Gene:
 class Chromosome:
     def __init__(self, partition: Iterable[Iterable[Item]],
                  truck_load, car_load, truck_cost, car_cost):
-        self.genes: Set[Gene] = {
-            Gene(p, truck_load, car_load, truck_cost, car_cost)
-            for p in partition
-        }
+        self.args = truck_load, car_load, truck_cost, car_cost
+        self.genes: Set[Gene] = {Gene(p, *self.args) for p in partition}
 
     def cross(self, other):
         """Operacja krzyżowania opisana w dokumentacji pod
@@ -156,11 +160,35 @@ class Chromosome:
                 chosen_gene = other_gene
                 chosen_seq = step_2_genes_other
             chosen_seq.remove(chosen_gene)
-            chosen_gene = Gene(set(chosen_gene)-{item}, chosen_gene.truck_load,
-                               chosen_gene.car_load, chosen_gene.truck_cost,
-                               chosen_gene.car_cost)
+            chosen_gene = Gene(set(chosen_gene)-{item}, *self.args)
             chosen_seq.append(chosen_gene)
-        # TODO Krok 4: dodawanie przedmiotów nie występujących w ogóle
+        # Krok 4: dodawanie przedmiotów nie występujących w ogóle
+        genes_so_far = SortedList(step_2_genes_self + step_2_genes_other + list(common_genes),
+                                  key=lambda g: -g.cost_fitness)
+        for item in in_no_genes:
+            already_inserted = False
+            for gene in genes_so_far[::]:
+                if item.weight + gene.weight > gene.truck_load:
+                    continue
+                new_gene_ver = Gene(list(gene) + [item], *self.args)
+                if new_gene_ver.cost_fitness > gene.cost_fitness:
+                    genes_so_far.remove(gene)
+                    genes_so_far.add(new_gene_ver)
+                    already_inserted = True
+                    break
+            if already_inserted:
+                break
+            for gene in genes_so_far[::-1]:
+                if item.weight + gene.weight <= gene.truck_load:
+                    new_gene_ver = Gene(list(gene) + [item], *self.args)
+                    genes_so_far.remove(gene)
+                    genes_so_far.add(new_gene_ver)
+                    already_inserted = True
+                    break
+            if not already_inserted:
+                genes_so_far.add(Gene([item], *self.args))
+
+
 
     @property
     def fitness(self):
