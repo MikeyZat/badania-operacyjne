@@ -1,0 +1,408 @@
+{
+  "car_cost": 15,
+  "truck_cost": 50,
+  "car_load": 10,
+  "truck_load": 40,
+  "items": [
+    {
+      "name": "mirror",
+      "weight": 4.29
+    },
+    {
+      "name": "hand bag",
+      "weight": 16.51
+    },
+    {
+      "name": "pair of handcuffs",
+      "weight": 17.71
+    },
+    {
+      "name": "fork",
+      "weight": 8.63
+    },
+    {
+      "name": "chair",
+      "weight": 8.24
+    },
+    {
+      "name": "can of whipped cream",
+      "weight": 2.11
+    },
+    {
+      "name": "lemon",
+      "weight": 5.39
+    },
+    {
+      "name": "craft book",
+      "weight": 7.15
+    },
+    {
+      "name": "egg beater",
+      "weight": 16.37
+    },
+    {
+      "name": "beaded bracelet",
+      "weight": 13.66
+    },
+    {
+      "name": "jar of pickles",
+      "weight": 1.85
+    },
+    {
+      "name": "tennis ball",
+      "weight": 2.02
+    },
+    {
+      "name": "class ring",
+      "weight": 16.4
+    },
+    {
+      "name": "Christmas ornament",
+      "weight": 17.83
+    },
+    {
+      "name": "carton of ice cream",
+      "weight": 4.78
+    },
+    {
+      "name": "bookmark",
+      "weight": 6.07
+    },
+    {
+      "name": "roll of toilet paper",
+      "weight": 14.57
+    },
+    {
+      "name": "statuette",
+      "weight": 13.35
+    },
+    {
+      "name": "tooth pick",
+      "weight": 15.67
+    },
+    {
+      "name": "grid paper",
+      "weight": 17.43
+    },
+    {
+      "name": "letter opener",
+      "weight": 8.78
+    },
+    {
+      "name": "hair pin",
+      "weight": 6.83
+    },
+    {
+      "name": "carrots",
+      "weight": 15.56
+    },
+    {
+      "name": "spatula",
+      "weight": 13.24
+    },
+    {
+      "name": "flashlight",
+      "weight": 18.99
+    },
+    {
+      "name": "cat",
+      "weight": 10.56
+    },
+    {
+      "name": "bottle of syrup",
+      "weight": 9.15
+    },
+    {
+      "name": "washcloth",
+      "weight": 2.44
+    },
+    {
+      "name": "spectacles",
+      "weight": 5.0
+    },
+    {
+      "name": "house",
+      "weight": 17.1
+    },
+    {
+      "name": "book of matches",
+      "weight": 19.54
+    },
+    {
+      "name": "roll of stickers",
+      "weight": 6.25
+    },
+    {
+      "name": "martini glass",
+      "weight": 1.99
+    },
+    {
+      "name": "box",
+      "weight": 19.36
+    },
+    {
+      "name": "pair of scissors",
+      "weight": 13.4
+    },
+    {
+      "name": "rusty nail",
+      "weight": 6.96
+    },
+    {
+      "name": "bonesaw",
+      "weight": 12.74
+    },
+    {
+      "name": "postage stamp",
+      "weight": 13.29
+    },
+    {
+      "name": "marble",
+      "weight": 11.49
+    },
+    {
+      "name": "candle",
+      "weight": 6.99
+    },
+    {
+      "name": "CD",
+      "weight": 6.58
+    },
+    {
+      "name": "game cartridge",
+      "weight": 16.74
+    },
+    {
+      "name": "cars",
+      "weight": 14.49
+    },
+    {
+      "name": "stick of incense",
+      "weight": 5.06
+    },
+    {
+      "name": "shark",
+      "weight": 7.2
+    },
+    {
+      "name": "shoes",
+      "weight": 11.43
+    },
+    {
+      "name": "bow tie",
+      "weight": 7.97
+    },
+    {
+      "name": "socks",
+      "weight": 8.28
+    },
+    {
+      "name": "straw",
+      "weight": 2.71
+    },
+    {
+      "name": "milk",
+      "weight": 15.8
+    },
+    {
+      "name": "canteen",
+      "weight": 9.13
+    },
+    {
+      "name": "spoon",
+      "weight": 12.03
+    },
+    {
+      "name": "bell",
+      "weight": 18.11
+    },
+    {
+      "name": "egg",
+      "weight": 9.39
+    },
+    {
+      "name": "plush dog",
+      "weight": 13.81
+    },
+    {
+      "name": "toothpaste",
+      "weight": 19.34
+    },
+    {
+      "name": "tv",
+      "weight": 6.88
+    },
+    {
+      "name": "tissue box",
+      "weight": 3.17
+    },
+    {
+      "name": "light bulb",
+      "weight": 9.29
+    },
+    {
+      "name": "pair of earrings",
+      "weight": 3.8
+    },
+    {
+      "name": "plush rabbit",
+      "weight": 13.83
+    },
+    {
+      "name": "can of beans",
+      "weight": 9.4
+    },
+    {
+      "name": "steak knife",
+      "weight": 3.45
+    },
+    {
+      "name": "bottle of perfume",
+      "weight": 4.04
+    },
+    {
+      "name": "handheld game system",
+      "weight": 11.23
+    },
+    {
+      "name": "dagger",
+      "weight": 1.26
+    },
+    {
+      "name": "safety pin",
+      "weight": 1.71
+    },
+    {
+      "name": "incense holder",
+      "weight": 9.08
+    },
+    {
+      "name": "multitool",
+      "weight": 10.28
+    },
+    {
+      "name": "box of tissues",
+      "weight": 12.75
+    },
+    {
+      "name": "candlestick",
+      "weight": 17.45
+    },
+    {
+      "name": "pasta strainer",
+      "weight": 17.28
+    },
+    {
+      "name": "bottle of nail polish",
+      "weight": 7.95
+    },
+    {
+      "name": "lip gloss",
+      "weight": 16.27
+    },
+    {
+      "name": "soap",
+      "weight": 4.46
+    },
+    {
+      "name": "bottle of water",
+      "weight": 13.47
+    },
+    {
+      "name": "empty tin can",
+      "weight": 2.35
+    },
+    {
+      "name": "soccer ball",
+      "weight": 7.6
+    },
+    {
+      "name": "door",
+      "weight": 3.78
+    },
+    {
+      "name": "map",
+      "weight": 19.69
+    },
+    {
+      "name": "quilt",
+      "weight": 18.3
+    },
+    {
+      "name": "handful of change",
+      "weight": 1.08
+    },
+    {
+      "name": "shawl",
+      "weight": 18.05
+    },
+    {
+      "name": "rabbit",
+      "weight": 10.29
+    },
+    {
+      "name": "button",
+      "weight": 4.43
+    },
+    {
+      "name": "cup",
+      "weight": 6.06
+    },
+    {
+      "name": "pair of glasses",
+      "weight": 1.4
+    },
+    {
+      "name": "ring",
+      "weight": 8.84
+    },
+    {
+      "name": "pearl necklace",
+      "weight": 19.7
+    },
+    {
+      "name": "tea cup",
+      "weight": 14.38
+    },
+    {
+      "name": "zebra",
+      "weight": 8.11
+    },
+    {
+      "name": "plush pony",
+      "weight": 17.01
+    },
+    {
+      "name": "bananas",
+      "weight": 8.18
+    },
+    {
+      "name": "laser pointer",
+      "weight": 17.0
+    },
+    {
+      "name": "hair clip",
+      "weight": 1.1
+    },
+    {
+      "name": "sheet of paper",
+      "weight": 6.53
+    },
+    {
+      "name": "zipper",
+      "weight": 9.11
+    },
+    {
+      "name": "whip",
+      "weight": 3.29
+    },
+    {
+      "name": "lace",
+      "weight": 15.0
+    },
+    {
+      "name": "scotch tape",
+      "weight": 8.41
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import dataclasses
+import json
 import random
 
 
@@ -16,6 +17,17 @@ class Item:
 
     def __str__(self):
         return str(self.weight)
+
+    @staticmethod
+    def from_json(path: str):
+        """Wczytuje plik jako JSON i tworzy z niego listę przedmiotów"""
+        with open(path) as fin:
+            ret = json.load(fin)
+        return (
+            [Item(**kwargs) for kwargs in ret['items']],
+            ret['truck_load'], ret['car_load'],
+            ret['truck_cost'], ret['car_cost']
+        )
 
 
 def divide_into_trips(items, capacity):
@@ -56,15 +68,14 @@ def rand_solution(items, car_capacity, truck_capacity, car_item_prob=-1):
 
 
 def main():
-    n = 10
+    n = 20
     car_capacity = n // 2
     truck_capacity = 2 * n
-    weights = random.choices(list(range(1, int(n / 1.5))), k=n)
-    
+
     car_cost = 10
     truck_cost = 50
 
-    items = [Item(w) for w in weights]
+    items, _, _, _, _ = Item.from_json('simple.json')
     print('all items:')
     print(items)
 

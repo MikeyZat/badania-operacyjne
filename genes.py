@@ -188,6 +188,8 @@ class Chromosome:
             if not already_inserted:
                 genes_so_far.add(Gene([item], *self.args))
 
+        return Chromosome(genes_so_far, *self.args)
+
 
 
     @property
