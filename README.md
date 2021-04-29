@@ -16,3 +16,8 @@ Naszym celem jest zminimalizowanie łącznego kosztu przeprowadzki poprzez umiej
 ## Zastosowane algorytmy:
 - Algorytm genetyczny
 - 
+
+
+## Wyniki eksperymentów:
+
+Zarówno realizacja algorytmów jak i wyniki zostały opisane szegółowo w [dokumentacji](/dokumentacja.pdf)

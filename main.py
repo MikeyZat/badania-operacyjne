@@ -2,6 +2,7 @@ import random
 from GeneticAlgorithm import GeneticAlgorithm
 from genes import Chromosome
 from Item import Item
+from ga_selections import best_rank_selection
 
 
 def divide_into_trips(items, capacity):
@@ -42,7 +43,7 @@ def rand_solution(items, car_capacity, truck_capacity, car_item_prob=-1):
     return divide_into_trips(car_items, car_capacity), divide_into_trips(truck_items, truck_capacity)
 
 
-def print_rand_solution(file_name='simple.json'):
+def print_rand_solution(file_name='ex.json'):
     """RANDOM SOLUTION PRINTING"""
     items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json(
         file_name)
@@ -68,7 +69,7 @@ def gene_rand_solution(items, car_capacity, truck_capacity):
     return car_trips + truck_trips
 
 
-def ga_population_generator(file_name='simple.json'):
+def ga_population_generator(file_name='ex.json'):
     items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json(
         file_name)
 
@@ -83,12 +84,6 @@ def ga_population_generator(file_name='simple.json'):
     ]
 
 
-def ga_selection_model(generation):
-    max_selected = int(len(generation) / 10)
-    sorted_by_fitness = sorted(generation, key=lambda x: x.fitness, reverse=True)
-    return sorted_by_fitness[:max_selected]
-
-
 def ga_stop_condition(curr_best_match, curr_best_match_fitness, i):
     return i > 1000
 
@@ -99,7 +94,7 @@ def main():
 
     # GENETIC ALGORITHM STARTS
     ga = GeneticAlgorithm(ga_population_generator,
-                          ga_selection_model, ga_stop_condition)
+                          best_rank_selection, ga_stop_condition)
 
     solution = ga.run()
     print("Found solution:")
