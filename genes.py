@@ -5,8 +5,7 @@ from pprint import pprint
 from random import random
 import util
 
-
-from main import Item
+from Item import Item
 
 
 def mass_fitness(s: Iterable[Item], truck_load, car_load):
@@ -65,15 +64,17 @@ class Gene:
     def cost_fitness(self) -> float:
         if self.weight > self.truck_load:
             return 0
-        return self.weight / (self.truck_cost
-                              if self.is_by_truck
-                              else self.car_cost)
+        return self.weight / self.cost
+
+    @cached_property
+    def cost(self):
+        return self.truck_cost if self.is_by_truck else self.car_cost
 
     def __hash__(self):
         return hash(self.subset) ^ hash('truck' if self.is_by_truck else 'car')
 
     def __str__(self):
-        return (f'Gene with weight {self.weight} and fitness {self.mass_fitness} or {self.cost_fitness}'
+        return (f'Gene with weight {self.weight}, cost {self.cost} and fitness {self.mass_fitness} or {self.cost_fitness}'
                 f' (transport via {"truck" if self.is_by_truck else "car"})')
 
     def __len__(self):
@@ -101,8 +102,10 @@ class Chromosome:
         """Operacja krzyżowania opisana w dokumentacji pod
         Algorytmy -> genetyczny -> krzyżowanie
         """
-        self_genes: List[Gene] = sorted(self.genes, key=lambda g: g.cost_fitness, reverse=True)
-        other_genes: List[Gene] = sorted(other.genes, key=lambda g: g.cost_fitness, reverse=True)
+        self_genes: List[Gene] = sorted(
+            self.genes, key=lambda g: g.cost_fitness, reverse=True)
+        other_genes: List[Gene] = sorted(
+            other.genes, key=lambda g: g.cost_fitness, reverse=True)
         common_genes: Set[Gene] = set()
         i = j = 0
         # Krok 1: szukanie identycznych genów
@@ -149,8 +152,10 @@ class Chromosome:
         # Krok 3: usuwanie przedmiotów występujących 2 razy
         chosen_seq = chosen_gene = None
         for item in in_2_genes:
-            self_gene = [gene for gene in step_2_genes_self if item in gene.subset][0]
-            other_gene = [gene for gene in step_2_genes_other if item in gene.subset][0]
+            self_gene = [
+                gene for gene in step_2_genes_self if item in gene.subset][0]
+            other_gene = [
+                gene for gene in step_2_genes_other if item in gene.subset][0]
             if (self_gene.cost_fitness < other_gene.cost_fitness
                 or (self_gene.cost_fitness == other_gene.cost_fitness
                     and random() < 0.5)):
@@ -190,14 +195,26 @@ class Chromosome:
 
         return Chromosome(genes_so_far, *self.args)
 
-
-
     @property
     def fitness(self):
-        return -sum((gene.weight for gene in self.genes))
+        """Fitness equals the whole chromosome cost"""
+        return -self.cost
+
+    @property
+    def cost(self):
+        """The whole chromosome cost"""
+        return sum((gene.cost for gene in self.genes))
+
+    def mutation(self):
+        """TO DO"""
+        pass
 
     def __len__(self):
         return len(self.genes)
+
+    def __str__(self):
+        return f'Chromosome with current genes:\n {[str(gene) for gene in self.genes]}\n' \
+               f'and fitness {self.fitness}\n'
 
 
 if __name__ == '__main__':

@@ -1,33 +1,7 @@
-import dataclasses
-import json
 import random
-
-
-# not sure what this class will look like in the future
-@dataclasses.dataclass(order=True, frozen=True)
-class Item:
-    weight: float
-    name: str = dataclasses.field(default='')
-
-    def __sub__(self, other):
-        return self.weight - other
-
-    def __add__(self, other):
-        return self.weight + other
-
-    def __str__(self):
-        return str(self.weight)
-
-    @staticmethod
-    def from_json(path: str):
-        """Wczytuje plik jako JSON i tworzy z niego listę przedmiotów"""
-        with open(path) as fin:
-            ret = json.load(fin)
-        return (
-            [Item(**kwargs) for kwargs in ret['items']],
-            ret['truck_load'], ret['car_load'],
-            ret['truck_cost'], ret['car_cost']
-        )
+from GeneticAlgorithm import GeneticAlgorithm
+from genes import Chromosome
+from Item import Item
 
 
 def divide_into_trips(items, capacity):
@@ -61,34 +35,76 @@ def rand_solution(items, car_capacity, truck_capacity, car_item_prob=-1):
     random.shuffle(items)
     split_i = int(len(items) * car_item_prob)
     car_items = items[:split_i]
-    truck_items = items[split_i:] + [item for item in car_items if item.weight > car_capacity]
+    truck_items = items[split_i:] + \
+        [item for item in car_items if item.weight > car_capacity]
     car_items = [item for item in car_items if item.weight <= car_capacity]
 
     return divide_into_trips(car_items, car_capacity), divide_into_trips(truck_items, truck_capacity)
 
 
-def main():
-    n = 20
-    car_capacity = n // 2
-    truck_capacity = 2 * n
+def print_rand_solution(file_name='simple.json'):
+    """RANDOM SOLUTION PRINTING"""
+    items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json(
+        file_name)
+    car_trips, truck_trips = rand_solution(
+        items, car_capacity, truck_capacity, random.uniform(0, 1))
 
-    car_cost = 10
-    truck_cost = 50
-
-    items, _, _, _, _ = Item.from_json('simple.json')
-    print('all items:')
-    print(items)
-
-    car_trips, truck_trips = rand_solution(items, car_capacity, truck_capacity)
     print('\nVia car')
+    print(f'n = {len(car_trips)}')
     print(car_trips)
     print('\n=============\nVia truck')
+    print(f'm = {len(truck_trips)}')
     print(truck_trips)
-    
     operation_cost = cost(car_trips, truck_trips, car_cost, truck_cost)
-
     print('\nCost')
     print(operation_cost)
+
+
+# GENETIC
+
+def gene_rand_solution(items, car_capacity, truck_capacity):
+    car_trips, truck_trips = rand_solution(
+        items, car_capacity, truck_capacity, random.uniform(0, 1))
+    return car_trips + truck_trips
+
+
+def ga_population_generator(file_name='simple.json'):
+    items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json(
+        file_name)
+
+    return [
+        Chromosome(
+            gene_rand_solution(items, car_capacity, truck_capacity),
+            truck_capacity,
+            car_capacity,
+            truck_cost,
+            car_cost
+        ) for _ in range(100)
+    ]
+
+
+def ga_selection_model(generation):
+    max_selected = int(len(generation) / 10)
+    sorted_by_fitness = sorted(generation, key=lambda x: x.fitness, reverse=True)
+    return sorted_by_fitness[:max_selected]
+
+
+def ga_stop_condition(curr_best_match, curr_best_match_fitness, i):
+    return i > 1000
+
+
+def main():
+
+    print_rand_solution()
+
+    # GENETIC ALGORITHM STARTS
+    ga = GeneticAlgorithm(ga_population_generator,
+                          ga_selection_model, ga_stop_condition)
+
+    solution = ga.run()
+    print("Found solution:")
+    print(solution)
+    print(solution.cost)
 
 
 if __name__ == '__main__':
