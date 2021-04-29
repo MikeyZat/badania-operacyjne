@@ -12,7 +12,7 @@ class GeneticAlgorithm:
 
     def run(self):
         population = self.first_generation_func()
-        population.sort(key=lambda x: x.fitness)
+        population.sort(key=lambda x: x.fitness, reverse=True)
         population_len = len(population)
         i = 0
         while True:
@@ -25,7 +25,7 @@ class GeneticAlgorithm:
                 new_population.append(child)
 
             population = new_population
-            the_best_match = min(population, key=lambda x: x.fitness)
+            the_best_match = max(population, key=lambda x: x.fitness)
 
             if i % 50 == 0:
                 print(f'Generation: {i} S: {the_best_match}')

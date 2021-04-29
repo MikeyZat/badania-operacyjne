@@ -85,8 +85,8 @@ def ga_population_generator(file_name='simple.json'):
 
 def ga_selection_model(generation):
     max_selected = int(len(generation) / 10)
-    sorted_by_assess = sorted(generation, key=lambda x: x.fitness)
-    return sorted_by_assess[:max_selected]
+    sorted_by_fitness = sorted(generation, key=lambda x: x.fitness, reverse=True)
+    return sorted_by_fitness[:max_selected]
 
 
 def ga_stop_condition(curr_best_match, curr_best_match_fitness, i):
@@ -104,7 +104,7 @@ def main():
     solution = ga.run()
     print("Found solution:")
     print(solution)
-    print(solution.fitness)
+    print(solution.cost)
 
 
 if __name__ == '__main__':

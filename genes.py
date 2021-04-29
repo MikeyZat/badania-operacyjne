@@ -74,7 +74,7 @@ class Gene:
         return hash(self.subset) ^ hash('truck' if self.is_by_truck else 'car')
 
     def __str__(self):
-        return (f'Gene with weight {self.weight} and fitness {self.mass_fitness} or {self.cost_fitness}'
+        return (f'Gene with weight {self.weight}, cost {self.cost} and fitness {self.mass_fitness} or {self.cost_fitness}'
                 f' (transport via {"truck" if self.is_by_truck else "car"})')
 
     def __len__(self):
@@ -198,6 +198,11 @@ class Chromosome:
     @property
     def fitness(self):
         """Fitness equals the whole chromosome cost"""
+        return -self.cost
+
+    @property
+    def cost(self):
+        """The whole chromosome cost"""
         return sum((gene.cost for gene in self.genes))
 
     def mutation(self):
