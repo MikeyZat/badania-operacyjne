@@ -2,7 +2,7 @@ from functools import cached_property
 from typing import Iterable, Set, List
 from sortedcontainers import SortedList
 from pprint import pprint
-from random import random
+import random
 import util
 
 from Item import Item
@@ -74,8 +74,9 @@ class Gene:
         return hash(self.subset) ^ hash('truck' if self.is_by_truck else 'car')
 
     def __str__(self):
-        return (f'Gene with weight {self.weight}, cost {self.cost} and fitness {self.mass_fitness} or {self.cost_fitness}'
-                f' (transport via {"truck" if self.is_by_truck else "car"})')
+        return (
+            f'Gene with weight {self.weight}, cost {self.cost} and fitness {self.mass_fitness} or {self.cost_fitness}'
+            f' (transport via {"truck" if self.is_by_truck else "car"})')
 
     def __len__(self):
         return len(self.subset)
@@ -157,15 +158,15 @@ class Chromosome:
             other_gene = [
                 gene for gene in step_2_genes_other if item in gene.subset][0]
             if (self_gene.cost_fitness < other_gene.cost_fitness
-                or (self_gene.cost_fitness == other_gene.cost_fitness
-                    and random() < 0.5)):
+                    or (self_gene.cost_fitness == other_gene.cost_fitness
+                        and random.random() < 0.5)):
                 chosen_gene = self_gene
                 chosen_seq = step_2_genes_self
             else:
                 chosen_gene = other_gene
                 chosen_seq = step_2_genes_other
             chosen_seq.remove(chosen_gene)
-            chosen_gene = Gene(set(chosen_gene)-{item}, *self.args)
+            chosen_gene = Gene(set(chosen_gene) - {item}, *self.args)
             chosen_seq.append(chosen_gene)
         # Krok 4: dodawanie przedmiotów nie występujących w ogóle
         genes_so_far = SortedList(step_2_genes_self + step_2_genes_other + list(common_genes),
@@ -206,8 +207,48 @@ class Chromosome:
         return sum((gene.cost for gene in self.genes))
 
     def mutation(self):
-        """TO DO"""
-        pass
+        """delete one item from random gene and insert it in another"""
+        new_genes = sorted(self.genes, key=lambda g: -g.cost_fitness)
+
+        # pick gene from which we will delete one item
+        # remove it from new genes so we will not insert the item back to it
+        mutated_gene = random.choices(new_genes, weights=[g.cost_fitness for g in new_genes], k=1)[0]
+        new_genes.remove(mutated_gene)
+
+        # pick the item to be deleted and delete it from gene
+        mutated_gene_items = list(mutated_gene)
+        item = random.choice(mutated_gene_items)
+        mutated_gene_items.remove(item)
+        mutated_gene = Gene(mutated_gene_items, *self.args)
+
+        # add item to the most efficient gene, the efficiency of which will increase as a result of such an operation
+        item_added = False
+        for g in new_genes:
+            if g.weight + item.weight > self.args[0]:
+                continue
+            new_gene = Gene(list(g) + [item], *self.args)
+            if new_gene.cost_fitness > g.cost_fitness:
+                new_genes.remove(g)
+                new_genes.append(new_gene)
+                item_added = True
+                break
+        # if we haven't added it yet, add item to the least efficient gene that will be able to contain it
+        if not item_added:
+            for g in reversed(new_genes):
+                if g.weight + item.weight > self.args[0]:
+                    continue
+                new_gene = Gene(list(g) + [item], *self.args)
+                new_genes.remove(g)
+                new_genes.append(new_gene)
+                item_added = True
+                break
+        # if we haven't added it yet (no gene can contain the item) create new gene and add item to it
+        if not item_added:
+            new_genes.append(Gene([item], *self.args))
+
+        # add mutated gene that we deleted earlier
+        new_genes.append(mutated_gene)
+        self.genes = set(new_genes)
 
     def __len__(self):
         return len(self.genes)
@@ -227,3 +268,4 @@ if __name__ == '__main__':
     }
     pprint(items)
     print(Gene(items, 60, 12, 50, 15))
+
