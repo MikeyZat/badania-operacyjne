@@ -1,6 +1,10 @@
 from random import random, choice
 
 
+def key_f(x):
+    return x.fitness
+
+
 class GeneticAlgorithm:
 
     def __init__(self, first_population_generator: callable,
@@ -12,8 +16,9 @@ class GeneticAlgorithm:
 
     def run(self):
         population = self.first_generation_func()
-        population.sort(key=lambda x: x.fitness, reverse=True)
+        population.sort(key=key_f, reverse=True)
         population_len = len(population)
+        global_best = population[0]
         i = 0
         while True:
             selected = self.selection_model(population)
@@ -25,11 +30,12 @@ class GeneticAlgorithm:
                 new_population.append(child)
 
             population = new_population
-            the_best_match = max(population, key=lambda x: x.fitness)
+            the_best_match = max(population, key=key_f)
+            global_best = max((global_best, the_best_match), key=key_f)
 
             if i % 50 == 0:
                 print(f'Generation: {i} S: {the_best_match}')
 
             i += 1
             if self.stop_condition(the_best_match, the_best_match.fitness, i):
-                return the_best_match
+                return global_best
