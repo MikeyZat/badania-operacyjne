@@ -3,6 +3,7 @@ from GeneticAlgorithm import GeneticAlgorithm
 from genes import Chromosome
 from Item import Item
 from ga_selections import best_rank_selection
+import logging
 
 
 def divide_into_trips(items, capacity):
@@ -90,10 +91,12 @@ def ga_stop_condition(curr_best_match, curr_best_match_fitness, i):
 
 def main():
 
+    logging.basicConfig(level=logging.DEBUG, filename='output.log')
+
     print_rand_solution()
 
     # GENETIC ALGORITHM STARTS
-    ga = GeneticAlgorithm(ga_population_generator,
+    ga = GeneticAlgorithm(lambda: ga_population_generator('simple.json'),
                           best_rank_selection, ga_stop_condition)
 
     solution = ga.run()

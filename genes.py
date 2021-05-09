@@ -4,7 +4,7 @@ from sortedcontainers import SortedList
 from pprint import pprint
 import random
 import util
-
+import logging
 from Item import Item
 
 
@@ -76,7 +76,8 @@ class Gene:
     def __str__(self):
         return (
             f'Gene with weight {self.weight}, cost {self.cost} and fitness {self.mass_fitness} or {self.cost_fitness}'
-            f' (transport via {"truck" if self.is_by_truck else "car"})')
+            f' (transport via {"truck" if self.is_by_truck else "car"})'
+        )
 
     def __len__(self):
         return len(self.subset)
@@ -88,6 +89,12 @@ class Gene:
             return self.subset == other.subset
         else:
             return set(self.subset) == set(other)
+
+    def __repr__(self):
+        return (
+            f'Gene({repr(set(self.subset))}, {self.truck_load}, '
+            f'{self.car_load}, {self.truck_cost}, {self.car_cost})'
+        )
 
     def __iter__(self):
         return iter(self.subset)
@@ -103,6 +110,16 @@ class Chromosome:
         """Operacja krzyżowania opisana w dokumentacji pod
         Algorytmy -> genetyczny -> krzyżowanie
         """
+        try:
+            assert isinstance(other, Chromosome)
+            assert self.all_items() == other.all_items()
+            logging.log(logging.DEBUG, 'Starting crossing algorithm')
+        except AssertionError:
+            logging.critical(f'''Differing chromosomes:
+    {repr(self)}
+    and
+    {repr(other)}''')
+            raise SystemExit(1)
         self_genes: List[Gene] = sorted(
             self.genes, key=lambda g: g.cost_fitness, reverse=True)
         other_genes: List[Gene] = sorted(
@@ -194,7 +211,19 @@ class Chromosome:
             if not already_inserted:
                 genes_so_far.add(Gene([item], *self.args))
 
-        return Chromosome(genes_so_far, *self.args)
+        ret = Chromosome(genes_so_far, *self.args)
+        if self.all_items() == ret.all_items():
+            logging.log('Crossing success')
+            return ret
+        else:
+            logging.log(logging.CRITICAL, f'''crossing error
+    {repr(self)}
+    and
+    {repr(other)}
+    produced erroneous child
+    {repr(ret)} 
+    ''')
+            raise SystemExit(1)
 
     @property
     def fitness(self):
@@ -257,15 +286,38 @@ class Chromosome:
         return f'Chromosome with current genes:\n {[str(gene) for gene in self.genes]}\n' \
                f'and fitness {self.fitness}\n'
 
+    def __iter__(self):
+        return iter(self.genes)
+
+    def all_items(self):
+        return set(util.flatten(self))
+
+    def __repr__(self):
+        return f'Chromosome({repr([set(gene) for gene in self.genes])}, {repr(self.args)[1:-1]})'
+
 
 if __name__ == '__main__':
-    items = {
-        Item(name='chair1', weight=4),
-        Item(name='chair2', weight=4),
-        Item(name='chair3', weight=4),
-        # Item(name='chair4', weight=4),
-        # Item(name='table', weight=20),
-    }
-    pprint(items)
-    print(Gene(items, 60, 12, 50, 15))
+    chromosome1 = Chromosome([
+        {Item(weight=13.66, name='beaded bracelet'), Item(weight=5.06, name='stick of incense'),
+         Item(weight=7.15, name='craft book')},
+        {Item(weight=8.63, name='fork'), Item(weight=6.51, name='hand bag'),
+         Item(weight=16.37, name='egg beater')},
+        {Item(weight=7.2, name='shark')}, {Item(weight=8.28, name='socks')},
+        {Item(weight=7.97, name='bow tie')}, {Item(weight=7.71, name='pair of handcuffs')},
+        {Item(weight=5.39, name='lemon'), Item(weight=4.29, name='mirror')},
+        {Item(weight=12.11, name='can of whipped cream'),
+         Item(weight=11.43, name='shoes')}, {Item(weight=8.24, name='chair')}
+    ], 40, 10, 50, 15)
 
+    chromosome2 = Chromosome([
+        {Item(weight=13.66, name='beaded bracelet'), Item(weight=8.63, name='fork'),
+         Item(weight=7.71, name='pair of handcuffs')}, {Item(weight=5.39, name='lemon')},
+        {Item(weight=7.2, name='shark')}, {Item(weight=7.15, name='craft book')},
+        {Item(weight=6.51, name='hand bag')},
+        {Item(weight=11.43, name='shoes'), Item(weight=8.28, name='socks'),
+         Item(weight=7.97, name='bow tie'), Item(weight=4.29, name='mirror')},
+        {Item(weight=12.11, name='can of whipped cream'), Item(weight=16.37, name='egg beater')},
+        {Item(weight=5.06, name='stick of incense')}, {Item(weight=8.24, name='chair')}
+    ], 40, 10, 50, 15)
+
+    chromosome1.cross(chromosome2)
