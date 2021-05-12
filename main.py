@@ -4,6 +4,7 @@ from genes import Chromosome
 from Item import Item
 from ga_selections import best_rank_selection
 import logging
+from argparse import ArgumentParser
 
 
 def divide_into_trips(items, capacity):
@@ -25,7 +26,7 @@ def divide_into_trips(items, capacity):
 
 
 def cost(car_trips, truck_trips, car_cost, truck_cost):
-    return len(car_trips)*car_cost + len(truck_trips)*truck_cost
+    return len(car_trips) * car_cost + len(truck_trips) * truck_cost
 
 
 # I'm assuming every weight < truck capacity
@@ -38,7 +39,7 @@ def rand_solution(items, car_capacity, truck_capacity, car_item_prob=-1):
     split_i = int(len(items) * car_item_prob)
     car_items = items[:split_i]
     truck_items = items[split_i:] + \
-        [item for item in car_items if item.weight > car_capacity]
+                  [item for item in car_items if item.weight > car_capacity]
     car_items = [item for item in car_items if item.weight <= car_capacity]
 
     return divide_into_trips(car_items, car_capacity), divide_into_trips(truck_items, truck_capacity)
@@ -93,13 +94,22 @@ def ga_stop_condition(curr_best_match, curr_best_match_fitness, i):
 
 
 def main():
+    parser = ArgumentParser(
+        description='Demonstracja algorytmów populacyjnych'
+    )
+    parser.add_argument(
+        'infile', nargs='?', default='ex.json',
+        help='Ścieżka do pliku JSON z instancją problemu o strukturze '
+             'identycznej, jak załączony simple.json (domyślnie ex.json)'
+    )
+    args = parser.parse_args()
 
-    logging.basicConfig(level=logging.ERROR, filename='output.log')
+    logging.basicConfig(level=logging.ERROR)
 
     print_rand_solution()
 
     # GENETIC ALGORITHM STARTS
-    ga = GeneticAlgorithm(ga_population_generator('example.json'),
+    ga = GeneticAlgorithm(ga_population_generator(args.infile),
                           best_rank_selection, ga_stop_condition)
 
     solution = ga.run()
