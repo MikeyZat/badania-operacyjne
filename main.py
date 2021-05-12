@@ -74,15 +74,18 @@ def ga_population_generator(file_name='ex.json'):
     items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json(
         file_name)
 
-    return [
-        Chromosome(
-            gene_rand_solution(items, car_capacity, truck_capacity),
-            truck_capacity,
-            car_capacity,
-            truck_cost,
-            car_cost
-        ) for _ in range(100)
-    ]
+    def _gen():
+        return [
+            Chromosome(
+                gene_rand_solution(items, car_capacity, truck_capacity),
+                truck_capacity,
+                car_capacity,
+                truck_cost,
+                car_cost
+            ) for _ in range(100)
+        ]
+
+    return _gen
 
 
 def ga_stop_condition(curr_best_match, curr_best_match_fitness, i):
@@ -91,12 +94,12 @@ def ga_stop_condition(curr_best_match, curr_best_match_fitness, i):
 
 def main():
 
-    logging.basicConfig(level=logging.DEBUG, filename='output.log')
+    logging.basicConfig(level=logging.ERROR, filename='output.log')
 
     print_rand_solution()
 
     # GENETIC ALGORITHM STARTS
-    ga = GeneticAlgorithm(lambda: ga_population_generator('simple.json'),
+    ga = GeneticAlgorithm(ga_population_generator('example.json'),
                           best_rank_selection, ga_stop_condition)
 
     solution = ga.run()

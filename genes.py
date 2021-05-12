@@ -113,7 +113,7 @@ class Chromosome:
         try:
             assert isinstance(other, Chromosome)
             assert self.all_items() == other.all_items()
-            logging.log(logging.DEBUG, 'Starting crossing algorithm')
+            logging.debug('Starting crossing algorithm')
         except AssertionError:
             logging.critical(f'''Differing chromosomes:
     {repr(self)}
@@ -164,7 +164,8 @@ class Chromosome:
         # przygotowanie do kroków 3-4
         all_items: Set[Item] = set(util.flatten(self_genes))
         in_no_genes: Set[Item] = (all_items - set(util.flatten(step_2_genes_self))
-                                  - set(util.flatten(step_2_genes_other)))
+                                  - set(util.flatten(step_2_genes_other))
+                                  - set(util.flatten(common_genes)))
         in_2_genes: Set[Item] = (set(util.flatten(step_2_genes_self))
                                  & set(util.flatten(step_2_genes_other)))
         # Krok 3: usuwanie przedmiotów występujących 2 razy
@@ -200,7 +201,7 @@ class Chromosome:
                     already_inserted = True
                     break
             if already_inserted:
-                break
+                continue
             for gene in genes_so_far[::-1]:
                 if item.weight + gene.weight <= gene.truck_load:
                     new_gene_ver = Gene(list(gene) + [item], *self.args)
@@ -213,10 +214,10 @@ class Chromosome:
 
         ret = Chromosome(genes_so_far, *self.args)
         if self.all_items() == ret.all_items():
-            logging.log('Crossing success')
+            logging.debug('Crossing success')
             return ret
         else:
-            logging.log(logging.CRITICAL, f'''crossing error
+            logging.critical(f'''crossing error
     {repr(self)}
     and
     {repr(other)}

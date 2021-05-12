@@ -14,7 +14,7 @@ class Item:
         return self.weight + other
 
     def __str__(self):
-        return str(self.weight)
+        return f'{self.name}: {self.weight}'
 
     @staticmethod
     def from_json(path: str):
