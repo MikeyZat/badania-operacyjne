@@ -43,10 +43,7 @@ class Gene:
         subset_mass = sum(item.weight for item in subset)
         assert subset_mass <= truck_load
         self.is_by_truck: bool = subset_mass > car_load
-        self.truck_load: float = truck_load
-        self.car_load: float = car_load
-        self.truck_cost: float = truck_cost
-        self.car_cost: float = car_cost
+        self.args = truck_load, car_load, truck_cost, car_cost
 
     @cached_property
     def weight(self) -> float:
@@ -54,7 +51,7 @@ class Gene:
 
     @cached_property
     def mass_fitness(self) -> float:
-        if self.weight > self.truck_load:
+        if self.weight > self.truck_load or self.weight == 0:
             return 0
         return self.weight / (self.truck_load
                               if self.is_by_truck
@@ -62,13 +59,29 @@ class Gene:
 
     @cached_property
     def cost_fitness(self) -> float:
-        if self.weight > self.truck_load:
+        if self.weight > self.truck_load or self.weight == 0:
             return 0
         return self.weight / self.cost
 
     @cached_property
     def cost(self):
-        return self.truck_cost if self.is_by_truck else self.car_cost
+        return 0 if self.weight == 0 else (self.truck_cost if self.is_by_truck else self.car_cost)
+
+    @property
+    def truck_load(self):
+        return self.args[0]
+
+    @property
+    def car_load(self):
+        return self.args[1]
+
+    @property
+    def truck_cost(self):
+        return self.args[2]
+
+    @property
+    def car_cost(self):
+        return self.args[3]
 
     def __hash__(self):
         return hash(self.subset) ^ hash('truck' if self.is_by_truck else 'car')
@@ -234,16 +247,6 @@ class Chromosome:
     ''')
             raise SystemExit(1)
 
-    @property
-    def fitness(self):
-        """Fitness equals the whole chromosome cost"""
-        return -self.cost
-
-    @property
-    def cost(self):
-        """The whole chromosome cost"""
-        return sum((gene.cost for gene in self.genes))
-
     def mutation(self):
         """delete one item from random gene and insert it in another"""
         new_genes = sorted(self.genes, key=lambda g: -g.cost_fitness)
@@ -287,6 +290,32 @@ class Chromosome:
         # add mutated gene that we deleted earlier
         new_genes.append(mutated_gene)
         self.genes = set(new_genes)
+
+    @property
+    def fitness(self):
+        """Fitness equals the whole chromosome cost"""
+        return -self.cost
+
+    @property
+    def cost(self):
+        """The whole chromosome cost"""
+        return sum((gene.cost for gene in self.genes))
+
+    @property
+    def truck_load(self):
+        return self.args[0]
+
+    @property
+    def car_load(self):
+        return self.args[1]
+
+    @property
+    def truck_cost(self):
+        return self.args[2]
+
+    @property
+    def car_cost(self):
+        return self.args[3]
 
     def __len__(self):
         return len(self.genes)
