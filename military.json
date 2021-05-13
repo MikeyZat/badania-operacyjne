@@ -1,0 +1,847 @@
+{
+  "car_cost": 49,
+  "truck_cost": 50,
+  "car_load": 38,
+  "truck_load": 40,
+  "items": [
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    },
+    {
+      "name": "assault rifle",
+      "weight": 0.47
+    }
+   ]
+ }
