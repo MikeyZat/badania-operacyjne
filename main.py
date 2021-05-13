@@ -1,8 +1,8 @@
 import random
-from GeneticAlgorithm import GeneticAlgorithm
-from genes import Chromosome
+from genetic.GeneticAlgorithm import GeneticAlgorithm
+from genetic.genes import Chromosome
 from Item import Item
-from ga_selections import best_rank_selection
+from genetic.ga_selections import best_rank_selection
 import logging
 from argparse import ArgumentParser
 
@@ -45,7 +45,7 @@ def rand_solution(items, car_capacity, truck_capacity, car_item_prob=-1):
     return divide_into_trips(car_items, car_capacity), divide_into_trips(truck_items, truck_capacity)
 
 
-def print_rand_solution(file_name='ex.json'):
+def print_rand_solution(file_name='test_data/ex.json'):
     """RANDOM SOLUTION PRINTING"""
     items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json(
         file_name)
@@ -71,7 +71,7 @@ def gene_rand_solution(items, car_capacity, truck_capacity):
     return car_trips + truck_trips
 
 
-def ga_population_generator(file_name='ex.json', pop_size=100):
+def ga_population_generator(file_name='test_data/ex.json', pop_size=100):
     items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json(
         file_name)
 
@@ -100,7 +100,7 @@ def main():
         description='Demonstracja algorytmów populacyjnych'
     )
     parser.add_argument(
-        'infile', nargs='?', default='ex.json',
+        'infile', nargs='?', default='test_data/ex.json',
         help='Ścieżka do pliku JSON z instancją problemu o strukturze '
              'identycznej, jak załączony simple.json (domyślnie ex.json)'
     )
@@ -121,7 +121,7 @@ def main():
 
     logging.basicConfig(level=logging.ERROR)
 
-    # print_rand_solution()
+    # print_rand_solution(args.infile)
 
     # GENETIC ALGORITHM STARTS
     ga = GeneticAlgorithm(ga_population_generator(args.infile, args.pop_size),
