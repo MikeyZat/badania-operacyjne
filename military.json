@@ -1,8 +1,8 @@
 {
   "car_cost": 49,
   "truck_cost": 50,
-  "car_load": 38,
-  "truck_load": 40,
+  "car_load": 9,
+  "truck_load": 10,
   "items": [
     {
       "name": "assault rifle",
