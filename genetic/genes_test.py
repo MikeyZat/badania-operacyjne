@@ -1,5 +1,5 @@
 import unittest
-from genes import *
+from genetic.genes import *
 
 
 class GenesTest(unittest.TestCase):
@@ -19,7 +19,6 @@ class GenesTest(unittest.TestCase):
                            self.truck_cost, self.car_cost)
 
     def test_gene_constructor(self):
-        self.assertRaises(AssertionError, lambda: Gene(self.items, 20, 20, 20, 20))
         gene1 = Gene(self.items, *self.basic_args)
         self.assertEqual(gene1.subset, set(self.items))
         self.assertTrue(gene1.is_by_truck)
