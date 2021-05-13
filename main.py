@@ -121,16 +121,18 @@ def main():
 
     logging.basicConfig(level=logging.ERROR)
 
-    # print_rand_solution()
+    for _ in range(10):
 
-    # GENETIC ALGORITHM STARTS
-    ga = GeneticAlgorithm(ga_population_generator(args.infile, args.pop_size),
-                          best_rank_selection, ga_basic_stop_condition(args.gens))
+        print_rand_solution(args.infile)
 
-    solution = ga.run(args.gens)
-    print("Found solution:")
-    print(solution)
-    print(solution.cost)
+        # GENETIC ALGORITHM STARTS
+        ga = GeneticAlgorithm(ga_population_generator(args.infile, args.pop_size),
+                              best_rank_selection, ga_basic_stop_condition(args.gens))
+
+        solution = ga.run(args.gens)
+        print("Found solution:")
+        print(solution)
+        print(solution.cost)
 
 
 if __name__ == '__main__':

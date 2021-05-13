@@ -1,8 +1,8 @@
 {
-  "car_cost": 49,
-  "truck_cost": 50,
-  "car_load": 38,
-  "truck_load": 40,
+  "car_cost": 20,
+  "truck_cost": 150,
+  "car_load": 40,
+  "truck_load": 100,
   "items": [
     {
       "name": "assault rifle",
@@ -14,7 +14,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.49
+      "weight": 12.49
     },
     {
       "name": "assault rifle",
@@ -22,7 +22,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.51
+      "weight": 13.251
     },
     {
       "name": "assault rifle",
@@ -30,27 +30,27 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.53
+      "weight": 14.53
     },
     {
       "name": "assault rifle",
-      "weight": 1.54
+      "weight": 11.54
     },
     {
       "name": "assault rifle",
-      "weight": 1.55
+      "weight": 12.55
     },
     {
       "name": "assault rifle",
       "weight": 1.56
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 1.57
+      "weight": 51.57
     },
     {
       "name": "assault rifle",
-      "weight": 1.58
+      "weight": 12.58
     },
     {
       "name": "assault rifle",
@@ -74,35 +74,35 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.64
+      "weight": 15.64
     },
     {
       "name": "assault rifle",
-      "weight": 1.65
+      "weight": 12.65
     },
     {
       "name": "assault rifle",
-      "weight": 1.66
-    },
-    
-      "name": "assault rifle",
-      "weight": 1.67
+      "weight": 21.66
     },
     {
       "name": "assault rifle",
-      "weight": 1.68
+      "weight": 41.67
     },
     {
       "name": "assault rifle",
-      "weight": 1.69
+      "weight": 12.68
     },
     {
       "name": "assault rifle",
-      "weight": 1.70
+      "weight": 61.69
     },
     {
       "name": "assault rifle",
-      "weight": 1.71
+      "weight": 31.70
+    },
+    {
+      "name": "assault rifle",
+      "weight": 11.71
     },
     {
       "name": "assault rifle",
@@ -114,19 +114,19 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.74
+      "weight": 21.74
     },
     {
       "name": "assault rifle",
-      "weight": 1.75
+      "weight": 14.75
     },
     {
       "name": "assault rifle",
       "weight": 1.76
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 1.77
+      "weight": 41.77
     },
     {
       "name": "assault rifle",
@@ -134,7 +134,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.79
+      "weight": 12.79
     },
     {
       "name": "assault rifle",
@@ -142,11 +142,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.81
+      "weight": 13.81
     },
     {
       "name": "assault rifle",
-      "weight": 1.82
+      "weight": 51.82
     },
     {
       "name": "assault rifle",
@@ -154,43 +154,43 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.84
+      "weight": 13.84
     },
     {
       "name": "assault rifle",
-      "weight": 1.85
+      "weight": 13.85
     },
     {
       "name": "assault rifle",
-      "weight": 1.86
-    },
-    
-      "name": "assault rifle",
-      "weight": 1.87
+      "weight": 21.86
     },
     {
       "name": "assault rifle",
-      "weight": 1.88
+      "weight": 21.862
     },
     {
       "name": "assault rifle",
-      "weight": 1.89
+      "weight": 14.88
     },
     {
       "name": "assault rifle",
-      "weight": 1.90
+      "weight": 12.289
     },
     {
       "name": "assault rifle",
-      "weight": 1.91
+      "weight": 13.90
     },
     {
       "name": "assault rifle",
-      "weight": 1.92
+      "weight": 14.91
     },
     {
       "name": "assault rifle",
-      "weight": 1.93
+      "weight": 14.292
+    },
+    {
+      "name": "assault rifle",
+      "weight": 14.93
     },
     {
       "name": "assault rifle",
@@ -198,15 +198,15 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.95
+      "weight": 12.95
     },
     {
       "name": "assault rifle",
-      "weight": 1.96
+      "weight": 12.96
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 1.97
+      "weight": 12.95
     },
     {
       "name": "assault rifle",
@@ -214,11 +214,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 1.99
+      "weight": 61.99
     },
     {
       "name": "assault rifle",
-      "weight": 2.00
+      "weight": 22.00
     },
     {
       "name": "assault rifle",
@@ -226,47 +226,47 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.02
+      "weight": 24.02
     },
     {
       "name": "assault rifle",
-      "weight": 2.03
+      "weight": 21.103
     },
     {
       "name": "assault rifle",
-      "weight": 2.04
+      "weight": 25.04
     },
     {
       "name": "assault rifle",
-      "weight": 2.05
+      "weight": 22.05
     },
     {
       "name": "assault rifle",
-      "weight": 2.06
-    },
-    
-      "name": "assault rifle",
-      "weight": 2.07
+      "weight": 32.06
     },
     {
       "name": "assault rifle",
-      "weight": 2.08
+      "weight": 21.07
     },
     {
       "name": "assault rifle",
-      "weight": 2.09
+      "weight": 22.08
     },
     {
       "name": "assault rifle",
-      "weight": 2.10
+      "weight": 23.09
     },
     {
       "name": "assault rifle",
-      "weight": 2.11
+      "weight": 26.10
     },
     {
       "name": "assault rifle",
-      "weight": 2.12
+      "weight": 12.11
+    },
+    {
+      "name": "assault rifle",
+      "weight": 24.12
     },
     {
       "name": "assault rifle",
@@ -274,7 +274,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.14
+      "weight": 27.14
     },
     {
       "name": "assault rifle",
@@ -282,11 +282,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.16
+      "weight": 22.16
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 2.17
+      "weight": 24.17
     },
     {
       "name": "assault rifle",
@@ -294,11 +294,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.19
+      "weight": 2.1912
     },
     {
       "name": "assault rifle",
-      "weight": 2.20
+      "weight": 2.203
     },
     {
       "name": "assault rifle",
@@ -306,7 +306,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.22
+      "weight": 22.22
     },
     {
       "name": "assault rifle",
@@ -314,7 +314,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.24
+      "weight": 24.24
     },
     {
       "name": "assault rifle",
@@ -324,25 +324,25 @@
       "name": "assault rifle",
       "weight": 2.26
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 2.27
+      "weight": 62.27
     },
     {
       "name": "assault rifle",
-      "weight": 2.28
+      "weight": 22.28
     },
     {
       "name": "assault rifle",
-      "weight": 2.29
+      "weight": 12.29
     },
     {
       "name": "assault rifle",
-      "weight": 2.30
+      "weight": 23.30
     },
     {
       "name": "assault rifle",
-      "weight": 2.31
+      "weight": 23.31
     },
     {
       "name": "assault rifle",
@@ -350,7 +350,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.33
+      "weight": 32.33
     },
     {
       "name": "assault rifle",
@@ -358,31 +358,31 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.35
+      "weight": 28.35
     },
     {
       "name": "assault rifle",
-      "weight": 2.36
+      "weight": 72.36
     },
-    
+    {
       "name": "assault rifle",
       "weight": 2.37
     },
     {
       "name": "assault rifle",
-      "weight": 2.38
+      "weight": 29.38
     },
     {
       "name": "assault rifle",
-      "weight": 2.39
+      "weight": 62.39
     },
     {
       "name": "assault rifle",
-      "weight": 2.40
+      "weight": 28.40
     },
     {
       "name": "assault rifle",
-      "weight": 2.41
+      "weight": 27.41
     },
     {
       "name": "assault rifle",
@@ -390,11 +390,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.43
+      "weight": 24.43
     },
     {
       "name": "assault rifle",
-      "weight": 2.44
+      "weight": 27.44
     },
     {
       "name": "assault rifle",
@@ -402,35 +402,35 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.46
-    },
-    
-      "name": "assault rifle",
-      "weight": 2.47
+      "weight": 25.46
     },
     {
       "name": "assault rifle",
-      "weight": 2.48
+      "weight": 25.47
     },
     {
       "name": "assault rifle",
-      "weight": 2.49
+      "weight": 27.48
     },
     {
       "name": "assault rifle",
-      "weight": 2.50
+      "weight": 24.49
     },
     {
       "name": "assault rifle",
-      "weight": 2.51
+      "weight": 27.50
     },
     {
       "name": "assault rifle",
-      "weight": 2.52
+      "weight": 28.51
     },
     {
       "name": "assault rifle",
-      "weight": 2.53
+      "weight": 23.52
+    },
+    {
+      "name": "assault rifle",
+      "weight": 26.53
     },
     {
       "name": "assault rifle",
@@ -438,67 +438,67 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.55
+      "weight": 23.55
     },
     {
       "name": "assault rifle",
-      "weight": 2.56
+      "weight": 22.56
     },
-    
+    {
       "name": "assault rifle",
       "weight": 2.57
     },
     {
       "name": "assault rifle",
-      "weight": 2.58
+      "weight": 23.58
     },
     {
       "name": "assault rifle",
-      "weight": 2.59
+      "weight": 26.59
     },
     {
       "name": "assault rifle",
-      "weight": 2.60
+      "weight": 12.60
     },
     {
       "name": "assault rifle",
-      "weight": 2.61
+      "weight": 12.61
     },
     {
       "name": "assault rifle",
-      "weight": 2.62
+      "weight": 22.62
     },
     {
       "name": "assault rifle",
-      "weight": 2.63
+      "weight": 42.63
     },
     {
       "name": "assault rifle",
-      "weight": 2.64
+      "weight": 27.64
     },
     {
       "name": "assault rifle",
-      "weight": 2.65
+      "weight": 62.65
     },
     {
       "name": "assault rifle",
       "weight": 2.66
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 2.67
+      "weight": 52.67
     },
     {
       "name": "assault rifle",
-      "weight": 2.68
+      "weight": 22.68
     },
     {
       "name": "assault rifle",
-      "weight": 2.69
+      "weight": 22.69
     },
     {
       "name": "assault rifle",
-      "weight": 2.70
+      "weight": 21.70
     },
     {
       "name": "assault rifle",
@@ -506,15 +506,15 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.72
+      "weight": 42.72
     },
     {
       "name": "assault rifle",
-      "weight": 2.73
+      "weight": 52.73
     },
     {
       "name": "assault rifle",
-      "weight": 2.74
+      "weight": 2.774
     },
     {
       "name": "assault rifle",
@@ -524,9 +524,9 @@
       "name": "assault rifle",
       "weight": 2.76
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 2.77
+      "weight": 5.77
     },
     {
       "name": "assault rifle",
@@ -534,43 +534,43 @@
     },
     {
       "name": "assault rifle",
-      "weight": 2.79
+      "weight": 7.79
     },
     {
       "name": "assault rifle",
-      "weight": 2.80
+      "weight": 3.80
     },
     {
       "name": "assault rifle",
-      "weight": 2.81
+      "weight": 5.81
     },
     {
       "name": "assault rifle",
-      "weight": 2.82
+      "weight": 24.82
     },
     {
       "name": "assault rifle",
-      "weight": 2.83
+      "weight": 4.83
     },
     {
       "name": "assault rifle",
-      "weight": 2.84
+      "weight": 8.84
     },
     {
       "name": "assault rifle",
-      "weight": 2.85
+      "weight": 22.85
     },
     {
       "name": "assault rifle",
-      "weight": 2.86
-    },
-    
-      "name": "assault rifle",
-      "weight": 2.87
+      "weight": 12.86
     },
     {
       "name": "assault rifle",
-      "weight": 2.88
+      "weight": 4.87
+    },
+    {
+      "name": "assault rifle",
+      "weight": 7.88
     },
     {
       "name": "assault rifle",
@@ -604,9 +604,9 @@
       "name": "assault rifle",
       "weight": 2.96
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 2.97
+      "weight": 12.97
     },
     {
       "name": "assault rifle",
@@ -618,11 +618,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.00
+      "weight": 13.00
     },
     {
       "name": "assault rifle",
-      "weight": 3.01
+      "weight": 5.01
     },
     {
       "name": "assault rifle",
@@ -634,31 +634,31 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.04
+      "weight": 31.04
     },
     {
       "name": "assault rifle",
-      "weight": 3.05
+      "weight": 43.05
     },
     {
       "name": "assault rifle",
-      "weight": 3.06
+      "weight": 23.06
     },
-    
+    {
       "name": "assault rifle",
       "weight": 3.07
     },
     {
       "name": "assault rifle",
-      "weight": 3.08
+      "weight": 33.08
     },
     {
       "name": "assault rifle",
-      "weight": 3.09
+      "weight": 13.09
     },
     {
       "name": "assault rifle",
-      "weight": 3.10
+      "weight": 31.10
     },
     {
       "name": "assault rifle",
@@ -666,15 +666,15 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.12
+      "weight": 3.1224
     },
     {
       "name": "assault rifle",
-      "weight": 3.13
+      "weight": 3.1213
     },
     {
       "name": "assault rifle",
-      "weight": 3.14
+      "weight": 31.142
     },
     {
       "name": "assault rifle",
@@ -682,11 +682,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.16
+      "weight": 32.16
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 3.17
+      "weight": 63.17
     },
     {
       "name": "assault rifle",
@@ -694,46 +694,47 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.19
+      "weight": 5.19
     },
     {
       "name": "assault rifle",
-      "weight": 3.20
+      "weight": 9.20
     },
     {
       "name": "assault rifle",
-      "weight": 3.21
+      "weight": 5.21
     },
     {
       "name": "assault rifle",
-      "weight": 3.22
+      "weight": 4.22
     },
     {
       "name": "assault rifle",
-      "weight": 3.23
+      "weight": 9.23
     },
     {
       "name": "assault rifle",
-      "weight": 3.24
+      "weight": 10.24
     },
     {
       "name": "assault rifle",
-      "weight": 3.25
+      "weight": 10.25
     },
     {
       "name": "assault rifle",
       "weight": 3.26
     },
+    {
       "name": "assault rifle",
       "weight": 3.27
     },
     {
       "name": "assault rifle",
-      "weight": 3.28
+      "weight": 32.28
     },
     {
       "name": "assault rifle",
-      "weight": 3.29
+      "weight": 33.29
     },
     {
       "name": "assault rifle",
@@ -741,7 +742,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.31
+      "weight": 31.31
     },
     {
       "name": "assault rifle",
@@ -749,7 +750,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.33
+      "weight": 32.33
     },
     {
       "name": "assault rifle",
@@ -761,11 +762,11 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.36
+      "weight": 32.36
     },
-    
+    {
       "name": "assault rifle",
-      "weight": 3.37
+      "weight": 6.37
     },
     {
       "name": "assault rifle",
@@ -773,7 +774,7 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.39
+      "weight": 4.39
     },
     {
       "name": "assault rifle",
@@ -789,19 +790,19 @@
     },
     {
       "name": "assault rifle",
-      "weight": 3.43
+      "weight": 8.43
     },
     {
       "name": "assault rifle",
-      "weight": 3.44
+      "weight": 9.44
     },
     {
       "name": "assault rifle",
-      "weight": 3.45
+      "weight": 17.45
     },
     {
       "name": "assault rifle",
-      "weight": 3.46
+      "weight": 5.46
     }
    ]
  }
