@@ -15,7 +15,7 @@ Naszym celem jest zminimalizowanie łącznego kosztu przeprowadzki poprzez umiej
 
 ## Zastosowane algorytmy:
 - Algorytm genetyczny
-- 
+- Algorytm rojowy (pszczółki)
 
 
 ## Wyniki eksperymentów:
