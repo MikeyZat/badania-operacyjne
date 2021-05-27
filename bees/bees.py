@@ -1,5 +1,4 @@
-from ProblemParameters import ProblemParameters
-from Solution import Solution
+from bees.Solution import Solution
 import random
 
 
