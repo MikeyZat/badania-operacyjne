@@ -1,7 +1,7 @@
 from ProblemParameters import ProblemParameters
 from Item import Item
 from BeeAlgorithm import BeeAlgorithm
-from main import rand_solution
+from rand_solution_generator import rand_solution
 from Solution import Solution
 
 items, truck_capacity, car_capacity, truck_cost, car_cost = Item.from_json('../test_data/ex.json')

@@ -1,6 +1,6 @@
-from bees import Scout, FlowerPatch
-from ProblemParameters import ProblemParameters
-from Item import Item
+from bees.bees import Scout, FlowerPatch
+from bees.ProblemParameters import ProblemParameters
+from tqdm import trange
 import random
 
 
@@ -35,15 +35,19 @@ class BeeAlgorithm:
         Keyword arguments:
             n - number of times the algorithm is executed
         """
-        for i in range(self.ns):
+        print("Initialization of scouts and flower patches")
+        for i in trange(self.ns):
             self.scouts.append(Scout(self.sf(), i))
             self.flower_patches.append(FlowerPatch(self.scouts[i], self.fpf))
 
-        for _ in range(n):
-            print(max(self.scouts, key=lambda s : s.fitness).fitness)
+        print("Running main loop")
+        for _ in trange(n):
+            # print(max(self.scouts, key=lambda s : s.fitness).fitness)
             found_better = self.local_search()
             self.neighbourhood_shrinking(found_better)
             self.global_search()
+
+        return max(self.scouts, key=lambda s: s.fitness).solution
 
     def local_search(self):
         found_better = [False] * self.ns
