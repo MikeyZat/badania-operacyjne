@@ -1,4 +1,4 @@
-from ProblemParameters import ProblemParameters
+from bees.ProblemParameters import ProblemParameters
 
 
 class Solution:
