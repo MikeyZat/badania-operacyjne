@@ -3,6 +3,8 @@
 Ten projekt ma na celu optymalizację rozwiązania problemu przeprowadzki. Wykorzystamy różne algorytmy i zbadamy ich skuteczność.
 
 ## Ogólna definicja problemu
+![BOpresentation](BOpresentation.png)
+
 ### Dane:
 - mamy do dyspozycji własny samochód osobowy z bagażnikiem o danej pojemności
 - mamy do dyspozycji samochód ciężarowy na wynajem, z bagażnikiem o danej pojemności (większej niż samochodu osobowego)
