@@ -3,7 +3,7 @@
 Ten projekt ma na celu optymalizację rozwiązania problemu przeprowadzki. Wykorzystamy różne algorytmy i zbadamy ich skuteczność.
 
 ## Ogólna definicja problemu
-![BOpresentation](https://user-images.githubusercontent.com/41756225/121952073-0e90fb80-cd5c-11eb-8cb9-295b28a2b973.png)
+![BOpresentation](BOpresentation.png)
 
 ### Dane:
 - mamy do dyspozycji własny samochód osobowy z bagażnikiem o danej pojemności
